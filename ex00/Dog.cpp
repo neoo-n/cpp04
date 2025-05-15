@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:32:24 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/15 12:00:00 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/15 14:44:24 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ Dog::~Dog()
 
 Dog &Dog::operator=(const Dog &obj)
 {
-	this->type = obj.type;
+	if (this != &obj)
+		this->type = obj.type;
 	return (*this);
 }
 
