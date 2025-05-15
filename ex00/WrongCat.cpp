@@ -1,46 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/14 14:32:24 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/15 14:56:43 by dvauthey         ###   ########.fr       */
+/*   Created: 2025/05/15 16:16:12 by dvauthey          #+#    #+#             */
+/*   Updated: 2025/05/15 16:19:02 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
 // ------------------------------ CONSTRUCTORS AND DESTRUCTOR -------------------------------------
 
-Dog::Dog()
-: Animal("Dog")
+WrongCat::WrongCat()
+: WrongAnimal("WrongCat")
 {
-    std::cout << "Default Dog constructor called" << std::endl;
+    std::cout << "Default WrongCat constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other)
-: Animal(other.type)
+WrongCat::WrongCat(const WrongCat &other)
+: WrongAnimal(other.type)
 {
-    std::cout << "Copy Dog constructor called" << std::endl;
+    std::cout << "Copy WrongCat constructor called" << std::endl;
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-    std::cout << "Destructor Dog called" << std::endl;
+    std::cout << "Destructor WrongCat called" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &obj)
+WrongCat &WrongCat::operator=(const WrongCat &obj)
 {
 	if (this != &obj)
 		this->type = obj.type;
+	std::cout << "Assignment WrongCat called" << std::endl;
 	return (*this);
 }
 
 // ------------------------------------- METHODS --------------------------------------------
 
-void	Dog::makeSound() const
+void	WrongCat::makeSound() const
 {
-	std::cout << "Waouf" << std::endl;
+	std::cout << "Miaw" << std::endl;
 }

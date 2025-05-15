@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:12:45 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/15 11:58:22 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:07:50 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ class Animal
         Animal();
         Animal(const Animal& cpy);
         Animal(const std::string type);
-        ~Animal();
+        virtual ~Animal();
         Animal &operator=(const Animal& rhs);
 
-		virtual void 	makeSound() = 0;
+		std::string	getType() const;
+
+		virtual void 	makeSound() const;
 };
 
 #endif

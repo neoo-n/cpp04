@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:32:29 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/15 14:43:59 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/15 14:56:52 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Cat &Cat::operator=(const Cat &obj)
 
 // ------------------------------------- METHODS --------------------------------------------
 
-void	Cat::makeSound()
+void	Cat::makeSound() const
 {
 	std::cout << "Miaw" << std::endl;
 }
