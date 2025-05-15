@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:32:19 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/14 14:32:22 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/14 15:06:44 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,8 +14,9 @@
 # define DOG_HPP
 
 # include <iostream>
+# include "Animal.hpp"
 
-class Dog
+class Dog : public Animal
 {
     private:
 
