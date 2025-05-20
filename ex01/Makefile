@@ -1,5 +1,5 @@
-NAME	=	animal
-SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+NAME	=	brain
+SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS	=	${SRCS:.cpp=.o}
 CC		=	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
@@ -21,25 +21,36 @@ all:	${NAME} header
 
 header:
 	@echo "$(L_PURPLE)"
-	@echo ".------..------..------..------..------."
-	@echo "|C.--. ||P.--. ||P.--. ||0.--. ||4.--. |"
-	@echo "| :/\: || :/\: || (\/) || :(): || :/\: |"
-	@echo "| (__) || (__) || :\/: || ()() || :\/: |"
-	@echo "| '--'C|| '--'P|| '--'P|| '--'0|| '--'4|"
-	@echo "\`------'\`------'\`------'\`------'\`------'"
+	@echo "   _     _      _     _      _     _ 04"
+	@echo "  (c).-.(c)    (c).-.(c)    (c).-.(c)  "
+	@echo "   / ._. \      / ._. \      / ._. \   "
+	@echo " __\( Y )/__  __\( Y )/__  __\( Y )/__ "
+	@echo "(_.-/'-'\-._)(_.-/'-'\-._)(_.-/'-'\-._)"
+	@echo "   || C ||      || P ||      || P ||   "
+	@echo " _.' \`-' '._  _.' \`-' '._  _.' \`-' '._ "
+	@echo "(.-./\`-'\.-.)(.-./\`-'\.-.)(.-./\`-'\.-.)"
+	@echo " \`-'     \`-'  \`-'     \`-'  \`-'     \`-' "
 	@echo "$(END)"	
 
 ${NAME}:	${OBJS}
-	@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+	@echo -n "${BLUE}"
+	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+	@echo -n "${END}"
 
 %.o: %.cpp
-	@${CC} ${CFLAGS} -c -o $@ $<
+	@echo -n "${BLUE}"
+	${CC} ${CFLAGS} -c -o $@ $<
+	@echo -n "${END}"
 
 clean:
-	@rm -f ${OBJS}
+	@echo -n "${RED}"
+	rm -f ${OBJS}
+	@echo -n "${END}"
 
 fclean: clean
-	@rm -f ${NAME}
+	@echo -n "${RED}"
+	rm -f ${NAME}
+	@echo -n "${END}"
 
 re: fclean all
 
