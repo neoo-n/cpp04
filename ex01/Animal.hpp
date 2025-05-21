@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
@@ -6,14 +6,15 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:12:45 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/15 16:07:50 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:56:10 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
 # include <iostream>
+# include "Brain.hpp"
 
 class Animal
 {
@@ -27,7 +28,9 @@ class Animal
         virtual ~Animal();
         Animal &operator=(const Animal& rhs);
 
-		std::string	getType() const;
+		std::string		getType() const;
+		virtual Brain	*getBrain() = 0;
+		virtual void	setBrain(const std::string idea, int index) = 0;
 
 		virtual void 	makeSound() const;
 };

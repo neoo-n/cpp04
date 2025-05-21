@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:32:33 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/20 16:26:26 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:45:30 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #ifndef CAT_HPP
 # define CAT_HPP
@@ -28,8 +28,8 @@ class Cat : public Animal
         ~Cat();
         Cat &operator=(const Cat&obj);
 
-		Brain	getBrain() const;
-		void	setBrain(const Brain n_brain);
+		Brain	*getBrain();
+		void	setBrain(const std::string idea, int index);
 
 		void	makeSound() const;
 };

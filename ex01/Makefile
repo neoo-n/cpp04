@@ -1,5 +1,5 @@
 NAME	=	brain
-SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS	=	${SRCS:.cpp=.o}
 CC		=	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
