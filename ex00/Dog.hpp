@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:32:19 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/15 16:06:36 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/20 16:25:11 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class Dog : public Animal
 {
     public:
         Dog();
-        Dog(const Dog&other);
+        Dog(const Dog &other);
         ~Dog();
-        Dog &operator=(const Dog&obj);
+        Dog &operator=(const Dog &obj);
 
 		void	makeSound() const;
 };

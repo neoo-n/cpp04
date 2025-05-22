@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:20:56 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/21 15:55:09 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/22 11:46:04 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Dog.hpp"
@@ -36,11 +36,20 @@ int	main()
 	for (int i = 0; i < 10; i++)
 		std::cout << animals[i]->getType() << " has the idea of : " << animals[i]->getBrain()->getIdeas()[0] << std::endl;
 
-	std::cout << std::endl << "--------------------------- DEEP COPY ---------------------------" << std::endl;
-
-
 	std::cout << std::endl << "-------------------------- DESTRUCTION --------------------------" << std::endl;
 	for (int i = 0; i < 10; i++)
 		delete(animals[i]);
+
+	std::cout << std::endl << "--------------------------- DEEP COPY ---------------------------" << std::endl;
+	Dog	dog1;
+	Dog	dog2;
+
+	dog1.setBrain("I want to run after a ball", 0);
+	dog2.setBrain("This need to be deleted", 3);
+	dog2 = dog1;
+	
+
+
+	
 	return (0);
 }
