@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:20:56 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/22 11:46:04 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/22 16:05:38 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,20 @@ int	main()
 	Dog	dog2;
 
 	dog1.setBrain("I want to run after a ball", 0);
-	dog2.setBrain("This need to be deleted", 3);
+	dog2.setBrain("This needs to be deleted", 3);
+	std::cout << "**************** dog1 ideas *******************" << std::endl;
+	dog1.printBrainIdeas();
+	std::cout << "**************** dog2 ideas *******************" << std::endl;
+	dog2.printBrainIdeas();
+	
 	dog2 = dog1;
-	
 
-
+	std::cout << "**************** dog2 ideas *******************" << std::endl;
+	dog2.printBrainIdeas();
 	
+	dog1.setBrain("I want to break free", 42);
+	std::cout << "**************** dog2 ideas *******************" << std::endl;
+	dog2.printBrainIdeas();
+	std::cout << std::endl << "-------------------------- DESTRUCTION --------------------------" << std::endl;
 	return (0);
 }
