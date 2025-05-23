@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:12:40 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/15 16:15:10 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/23 11:30:05 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,23 @@ std::string	Animal::getType() const
 	return (type);
 }
 
+Brain	*Animal::getBrain()
+{
+	return (0);
+}
+
+void	Animal::setBrain(const std::string idea, int index)
+{
+	(void)idea;
+	(void)index;
+}
+
 // ------------------------------- METHODS -------------------------------------
 void	Animal::makeSound() const
 {
 	std::cout << "I'm an animal" << std::endl;
+}
+
+void	Animal::printBrainIdeas() const
+{
 }
