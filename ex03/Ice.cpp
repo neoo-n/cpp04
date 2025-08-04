@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/04 16:46:20 by dvauthey          #+#    #+#             */
+/*   Updated: 2025/08/04 17:15:16 by dvauthey         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Ice.hpp"
 
@@ -38,5 +49,5 @@ Ice* Ice::clone() const
 
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << target.name << std::endl;
+	std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;
 }

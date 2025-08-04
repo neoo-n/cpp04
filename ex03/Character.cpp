@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/04 16:46:12 by dvauthey          #+#    #+#             */
+/*   Updated: 2025/08/04 17:16:30 by dvauthey         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Character.hpp"
 
@@ -37,17 +48,23 @@ std::string const &Character::getName() const
 // ------------------------------- METHODS -------------------------------------
 void Character::equip(AMateria *m)
 {
-	int i = 0;
-
-	while (i < 4)
+	for (int i = 0; i < 4; i++)
 	{
-		if (this->materias[i]->getType() == "nothing")
+		if (this->materias[i] == NULL)
 			this->materias[i] = m;
-		i++;
 	}
 }
 
 void Character::unequip(int idx)
 {
+	while (first->next != NULL)
+	{
+		first = first->next;
+	}
+	Node *new_item;
+	new_item->mat = this->materias[idx];
+	new_item->prev = first;
+	first->next = new_item;
 	
+	this->materias[idx] = NULL;
 }

@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Node.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 13:38:19 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/04 15:55:41 by dvauthey         ###   ########.fr       */
+/*   Created: 2025/08/04 16:46:01 by dvauthey          #+#    #+#             */
+/*   Updated: 2025/08/04 17:10:09 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef NODE_HPP
+# define NODE_HPP
 
 # include <iostream>
-# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class AMateria
+class Node
 {
-	protected:
-		std::string type;
+    public:
+		AMateria	*mat;
+		Node		*prev;
+		Node		*next;
 
-	public:
-		AMateria();
-		AMateria(const AMateria	&cpy);
-		AMateria(std::string const & type);
-		virtual ~AMateria();
-		AMateria &operator=(const AMateria &obj);
-
-		std::string const & getType() const;
-
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+        Node();
+        Node(const Node &cpy);
+        ~Node();
+        Node &operator=(const Node &obj);
 };
 
 #endif

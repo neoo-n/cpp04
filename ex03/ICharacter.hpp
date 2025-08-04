@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/04 16:46:16 by dvauthey          #+#    #+#             */
+/*   Updated: 2025/08/04 17:15:02 by dvauthey         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
@@ -7,8 +18,6 @@
 
 class ICharacter
 {
-    private:
-
     public:
         virtual ~ICharacter() {};
 
