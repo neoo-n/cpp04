@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:46:12 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/05 14:00:12 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 15:01:46 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,41 @@ Character::Character()
 }
 
 Character::Character(const Character &cpy)
-: name(cpy.name)
+: name(cpy.name), first(NULL)
 {
+	
+	for (int i = 0; i < 4; i++)
+		this->materias[i] = cpy.materias[i]->clone();
     std::cout << "Copy Character constructor called" << std::endl;
 }
 
 Character::Character(const std::string &new_name)
-: name(new_name)
+: name(new_name), first(NULL)
 {
+	for (int i = 0; i < 4; i++)
+		this->materias[i] = NULL;
 	std::cout << "Character constructor called" << std::endl;
 }
 
 Character::~Character()
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->materias[i])
+			delete this->materias[i];
+	}
     std::cout << "Destructor Character called" << std::endl;
 }
 
 Character	&Character::operator=(const Character &obj)
 {
 	if (this != &obj)
+	{
 		this->name = obj.name;
+		first = NULL;
+		for (int i = 0; i < 4; i++)
+			this->materias[i] = obj.materias[i]->clone();
+	}
 	std::cout << "Assignment Character called" << std::endl;
 	return (*this);
 }
