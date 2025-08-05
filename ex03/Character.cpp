@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:46:12 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/04 17:16:30 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 14:00:12 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 // ------------------------------ CONSTRUCTORS AND DESTRUCTOR -------------------------------------
 
 Character::Character()
-: name("no")
+: name("no"), first(NULL)
 {
+	for (int i = 0; i < 4; i++)
+		this->materias[i] =  NULL;
     std::cout << "Default Character constructor called" << std::endl;
 }
 
@@ -26,12 +28,18 @@ Character::Character(const Character &cpy)
     std::cout << "Copy Character constructor called" << std::endl;
 }
 
+Character::Character(const std::string &new_name)
+: name(new_name)
+{
+	std::cout << "Character constructor called" << std::endl;
+}
+
 Character::~Character()
 {
     std::cout << "Destructor Character called" << std::endl;
 }
 
-Character &Character::operator=(const Character &obj)
+Character	&Character::operator=(const Character &obj)
 {
 	if (this != &obj)
 		this->name = obj.name;
@@ -40,13 +48,13 @@ Character &Character::operator=(const Character &obj)
 }
 
 // -------------------------------- GET ----------------------------------------
-std::string const &Character::getName() const
+std::string const	&Character::getName() const
 {
 	return (name);
 }
 
 // ------------------------------- METHODS -------------------------------------
-void Character::equip(AMateria *m)
+void	Character::equip(AMateria *m)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -55,7 +63,7 @@ void Character::equip(AMateria *m)
 	}
 }
 
-void Character::unequip(int idx)
+void	Character::unequip(int idx)
 {
 	while (first->next != NULL)
 	{
@@ -67,4 +75,12 @@ void Character::unequip(int idx)
 	first->next = new_item;
 	
 	this->materias[idx] = NULL;
+}
+
+void	Character::use(int idx, ICharacter &target)
+{
+	if (!this->materias[idx])
+		std::cout << "no materias" << std::endl;
+	else
+		this->materias[idx]->use(target);
 }

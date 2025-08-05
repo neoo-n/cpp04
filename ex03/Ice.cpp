@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:46:20 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/04 17:15:16 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 13:56:59 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ Ice &Ice::operator=(const Ice &obj)
 // ------------------------------- METHODS -------------------------------------
 Ice* Ice::clone() const
 {
-	Ice	new_obj;
-	new_obj = *this;
-	return (&new_obj);
+	return (new Ice);
 }
 
 void Ice::use(ICharacter& target)

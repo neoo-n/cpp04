@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:46:28 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/04 17:15:24 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 13:56:25 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ Cure &Cure::operator=(const Cure &obj)
 // ------------------------------- METHODS -------------------------------------
 Cure* Cure::clone() const
 {
-	Cure new_obj;
-	new_obj = *this;
-	return (&new_obj);
+	return (new Cure);
 }
 
 void Cure::use(ICharacter& target)

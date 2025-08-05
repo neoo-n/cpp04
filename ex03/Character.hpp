@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:45:35 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/04 16:45:39 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 13:37:53 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "ICharacter.hpp"
 # include "Node.hpp"
 
-class Character
+class Character : public ICharacter
 {
 	private:
 		std::string	name;
@@ -27,6 +27,7 @@ class Character
 	public:
 		Character();
 		Character(const Character &cpy);
+		Character(const std::string &new_name);
 		~Character();
 		Character &operator=(const Character &obj);
 
