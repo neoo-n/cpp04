@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 13:35:02 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/05 13:52:19 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 16:36:59 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class MateriaSource : public IMateriaSource
         ~MateriaSource();
         MateriaSource &operator=(const MateriaSource &obj);
 
-		void learnMateria(AMateria*);
+		void learnMateria(AMateria* mat);
 		AMateria* createMateria(std::string const & type);
 };
 

@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:46:36 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/04 16:46:37 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 18:10:43 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 class Cure : public AMateria
 {
-	private:
-
 	public:
 		Cure();
 		Cure(const Cure &cpy);

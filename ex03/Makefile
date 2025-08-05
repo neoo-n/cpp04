@@ -1,5 +1,6 @@
-NAME	=	instantiable
-SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+NAME	=	materia
+SRCS	=	main.cpp AMateria.cpp Character.cpp Cure.cpp\
+			Ice.cpp MateriaSource.cpp Node.cpp
 OBJS	=	${SRCS:.cpp=.o}
 CC		=	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98
@@ -30,6 +31,8 @@ header:
 	@echo " _.' \`-' '._  _.' \`-' '._  _.' \`-' '._ "
 	@echo "(.-./\`-'\.-.)(.-./\`-'\.-.)(.-./\`-'\.-.)"
 	@echo " \`-'     \`-'  \`-'     \`-'  \`-'     \`-' "
+	@echo ""
+	@echo "$(GREEN) ${NAME} is ready !"
 	@echo "$(END)"	
 
 ${NAME}:	${OBJS}

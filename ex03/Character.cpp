@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:46:12 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/05 15:01:46 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 18:44:20 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,23 @@ Character::~Character()
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->materias[i])
+		{
 			delete this->materias[i];
+			this->materias[i] = NULL;
+		}
 	}
-    std::cout << "Destructor Character called" << std::endl;
+	if (first)
+	{
+		while (first->next)
+			first = first->next;
+		while (first->prev)
+		{
+			first = first->prev;
+			delete first->next;
+			first->next = NULL;
+		}
+	}
+    std::cout << "Destructor Character " << this->name << " called" << std::endl;
 }
 
 Character	&Character::operator=(const Character &obj)
@@ -65,17 +79,20 @@ Character	&Character::operator=(const Character &obj)
 // -------------------------------- GET ----------------------------------------
 std::string const	&Character::getName() const
 {
-	return (name);
+	return (this->name);
 }
 
 // ------------------------------- METHODS -------------------------------------
 void	Character::equip(AMateria *m)
 {
-	for (int i = 0; i < 4; i++)
-	{
-		if (this->materias[i] == NULL)
-			this->materias[i] = m;
-	}
+	int i = 0;
+
+	while (i < 4 && this->materias[i])
+		i++;
+	if (i < 4)
+		this->materias[i] = m;
+	else
+		std::cout << "There is no place for a new materia in the inventory" << std::endl;
 }
 
 void	Character::unequip(int idx)
@@ -84,7 +101,7 @@ void	Character::unequip(int idx)
 	{
 		first = first->next;
 	}
-	Node *new_item;
+	Node *new_item = new Node;
 	new_item->mat = this->materias[idx];
 	new_item->prev = first;
 	first->next = new_item;

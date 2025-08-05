@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 13:38:19 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/04 14:52:44 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/05 18:19:55 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ std::string const &AMateria::getType() const
 	return (type);
 }
 
-// ------------------------------- METHODS -------------------------------------
-void	AMateria::use(ICharacter& target)
+void	AMateria::use(ICharacter &target)
 {
-	
+	std::cout << "* using materia on " << target.getName() << " *" << std::endl;
 }
