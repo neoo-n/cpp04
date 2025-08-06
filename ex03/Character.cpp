@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 16:46:12 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/05 18:44:20 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/06 16:35:38 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // ------------------------------ CONSTRUCTORS AND DESTRUCTOR -------------------------------------
 
 Character::Character()
-: name("no"), first(NULL)
+: name("none"), first(NULL)
 {
 	for (int i = 0; i < 4; i++)
 		this->materias[i] =  NULL;
@@ -25,7 +25,6 @@ Character::Character()
 Character::Character(const Character &cpy)
 : name(cpy.name), first(NULL)
 {
-	
 	for (int i = 0; i < 4; i++)
 		this->materias[i] = cpy.materias[i]->clone();
     std::cout << "Copy Character constructor called" << std::endl;

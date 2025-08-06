@@ -31,8 +31,8 @@ header:
 	@echo " _.' \`-' '._  _.' \`-' '._  _.' \`-' '._ "
 	@echo "(.-./\`-'\.-.)(.-./\`-'\.-.)(.-./\`-'\.-.)"
 	@echo " \`-'     \`-'  \`-'     \`-'  \`-'     \`-' "
-	@echo ""
-	@echo "$(GREEN) ${NAME} is ready !"
+	@echo "$(GREEN)"
+	@echo "${NAME} is ready !"
 	@echo "$(END)"	
 
 ${NAME}:	${OBJS}
