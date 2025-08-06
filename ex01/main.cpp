@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:20:56 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/23 11:24:44 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/06 16:22:59 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,9 @@ int	main()
 	dog2.printBrainIdeas();
 	
 	dog1.setBrain("I want to break free", 42);
-	std::cout << "**************** dog2 ideas *******************" << std::endl;
+	std::cout << "**************** dog1 & 2 ideas *******************" << std::endl;
+	dog1.printBrainIdeas();
+	std::cout << std ::endl;
 	dog2.printBrainIdeas();
 	std::cout << std::endl << "-------------------------- DESTRUCTION --------------------------" << std::endl;
 	return (0);
