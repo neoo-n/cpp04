@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:20:56 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/23 11:46:55 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/07 16:45:05 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main()
 {
 	std::cout << "-------------------- CONSTRUCTION OF ANIMALS --------------------" << std::endl;
 	Animal *animals[10];
+	// Animal	test;
 
 	std::cout << std::endl << "------------------------- DOGS AND CATS -------------------------" << std::endl;
 	for (int i = 0; i < 5; i++)
