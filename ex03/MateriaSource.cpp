@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 13:34:57 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/08/05 18:41:08 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/08/07 15:54:38 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ MateriaSource::MateriaSource()
 MateriaSource::MateriaSource(const MateriaSource &cpy)
 {
 	for (int i = 0; i < 4; i++)
-		this->materias[i] = cpy.materias[i]->clone();
+	{
+		if (cpy.materias[i])
+			this->materias[i] = cpy.materias[i]->clone();
+		else
+			this->materias[i] = NULL;
+	}
     std::cout << "Copy MateriaSource constructor called" << std::endl;
 }
 
@@ -46,7 +51,12 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &obj)
 	if (this != &obj)
 	{
 		for (int i = 0; i < 4; i++)
-			this->materias[i] = obj.materias[i]->clone();
+		{
+			if (obj.materias[i])
+				this->materias[i] = obj.materias[i]->clone();
+			else
+				this->materias[i] = NULL;
+		}
 	}
 	std::cout << "Assignment MateriaSource called" << std::endl;
 	return (*this);
@@ -67,7 +77,14 @@ void	MateriaSource::learnMateria(AMateria* mat)
 	if (i < 4)
 		this->materias[i] = mat;
 	else
+	{
 		std::cout << "There is no place for a new materia to learn" << std::endl;
+		if (mat)
+		{
+			delete mat;
+			mat = NULL;
+		}
+	}
 }
 
 AMateria	*MateriaSource::createMateria(std::string const & type)
@@ -78,5 +95,5 @@ AMateria	*MateriaSource::createMateria(std::string const & type)
 			return (this->materias[i]->clone());
 	}
 	std::cout << "There is no materia to create" << std::endl;
-	return (0);
+	return (NULL);
 }

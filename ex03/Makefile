@@ -3,7 +3,7 @@ SRCS	=	main.cpp AMateria.cpp Character.cpp Cure.cpp\
 			Ice.cpp MateriaSource.cpp Node.cpp
 OBJS	=	${SRCS:.cpp=.o}
 CC		=	c++
-CFLAGS	=	-Werror -Wextra -Wall -std=c++98
+CFLAGS	=	-Werror -Wextra -Wall -std=c++98 -g
 
 # Colors and style
 END		:= \033[0m
